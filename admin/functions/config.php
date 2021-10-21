@@ -17,7 +17,6 @@ const BD_USER = "root";
 const BD_PASSWORD = "bcd127";
 const BD_DATABASE = "dbheroesburger";
 
-
 const ERRO_CAMPO_VAZIO = "<script> alert('Preencha todos os campos'); window.history.back(); </script>";
 
 const BD_ERRO_INSERIR = "<script> alert('Não foi possivel inserir registro no Banco de Dados'); window.history.back(); </script>";
