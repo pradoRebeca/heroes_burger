@@ -1,0 +1,300 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	
+}
+
+body{
+	font-family: verdana;	
+/*	background-color: #E6E6E6;*/
+}
+/*header*/
+header{
+	background-color: black;
+	width: 100%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	color: white;
+}
+
+#headerLogo img{
+	width: 200px;
+	height: 80px;
+}
+
+h1{
+letter-spacing: 6px;
+	margin-bottom: 10px;
+}
+
+h3{
+	letter-spacing: 2px;
+}
+
+#nomeEmpresa{
+	font-size: 0.7em;
+	letter-spacing: 0px;
+}
+
+main{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+/*secao de administracao*/
+#organizarSecaoAdm{
+	width: 100%;
+	height: 150px;
+	background-color: #c9c9c9;
+	display: flex;
+	align-items: center;
+	justify-content:center;
+}
+
+#secaoAdm{
+	width: 1100px;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#admListaMenu{
+	width: 650px;
+	height: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.admMenu, .admMenu a{
+	width: 140px;
+	height: 120px;
+	display: flex;
+	align-items:center; 
+	justify-content: center;
+	flex-direction: column;
+}
+
+#admUsuario{
+	width: 300px;
+	height: 120px;
+	display: flex;
+	align-items:center; 
+	justify-content: center;
+	flex-direction: column;
+}
+
+.admMenu img{
+	width: 35px;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
+#admUsuarioImg{
+	width: 70px;
+	height: 70px;
+	margin-top: 10px;
+	border-radius: 50px;
+}
+
+a{
+	text-decoration: none;
+	color:black;
+}
+
+a:hover{
+	color:#a82f2f;
+}
+
+/*rodape*/
+footer{
+	background-color: black;
+	height: 80px;
+	width: 100%;
+	color: white;
+	font-size: 0.8em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#footerCopyright, #footerVersao{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+/*secaoFormulario*/
+#secaoFormulario{
+	width: 1100px;
+	min-height: 300px;
+	height: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-direction: column;
+	padding: 100px;
+}
+
+h2{
+	width: 1040px;
+	height: 30px;
+}
+
+#frmFormulario{
+	margin-bottom: 50px;
+	margin-top: 50px;
+	width: inherit; 
+	min-height: 100px;
+	height: auto;
+	overflow: hidden;
+	border-radius: 20px;
+/*	border: 1px solid black;*/
+	padding-bottom: 30px;
+/*	background-color: #c9c9c9;*/
+}
+
+.organizarSecaoFrm{
+	width: inherit;
+	min-height: inherit;
+	height: auto;
+	overflow: hidden;
+	display: flex;
+	justify-content:space-around;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding: 30px;
+}
+
+.campoFormulario{
+	width: 470px;
+	height: 35px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.campoFormulario input{
+	height: 35px;
+	width: 300px;
+	outline: none;
+}
+
+.campoFormulario label{
+	width: 170px;
+	height: 35px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	letter-spacing: 2px;
+/*	border-right: 2px solid black;*/
+	padding-right: 10px;
+	background-color: #c9c9c9;
+}
+
+#buttomFormulario{
+	width: inherit;
+	height: 30px;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 30px;
+}
+
+#buttomFormulario input{
+	width: 120px;
+	height: inherit;
+	color: green;
+	background-color: white;
+	border-radius: 15px;
+	border: 2px solid green;
+	
+}
+
+#buttomFormulario input:hover{
+	color:white;
+	background-color: white;
+	cursor: pointer;
+	background-color: green;
+}
+
+/*secao de alteracao de informações */
+#alterarInformacoes{
+	width: inherit; 
+	min-height: 150px;
+	height: auto;
+	overflow: hidden;
+	border-radius: 20px;
+	padding: 30px;
+/*	border: 1px solid black;*/
+}
+
+.secaoInformacoes{
+	max-width: 1200px;;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+
+#headerInformacoes{
+	max-width: 1200px;;
+	height: 50px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+/*	border: 1px solid black;*/
+	font-weight: bold;
+	letter-spacing: 2px;
+	background-color: #c9c9c9;
+}
+
+.itemPesquisa{
+	width: 80%;
+	height: inherit;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.propriedadePesquisa{
+	width: 20%;
+	height: inherit;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-left: 2px solid black;
+}
+
+.propriedadePesquisa div{
+	width: 40px; 
+	height: 40px;
+	border-radius: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border:2px solid black;
+}
+
+.propriedadePesquisa div img{
+	max-width: 20px;
+	max-height: 20px;
+}
+
+.propriedadePesquisa div:hover{
+	width: 35px;
+	height: 35px;
+}
+
+
