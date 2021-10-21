@@ -97,8 +97,9 @@
 							</a>
 						</div>
 						<div>
-							<a href=""> 
-								<img src="../img/iconExcluir.png" alt="" title="Excluir">
+							<a onclick="return confirm('Tem certeza que deseja excluir?');"
+                               href="controles/excluiDadosCategoria.php"> 
+								<img src="../img/iconeTelefone.png" alt="" title="Excluir">
 							</a>
 						</div>
 						<div>

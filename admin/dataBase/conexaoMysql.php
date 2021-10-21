@@ -16,9 +16,9 @@ function conexaoMysql(){
 	$conexao = mysqli_connect($server, $user, $password, $database);
 	
 	if($conexao){
-		echo("deu certo");
+		return $conexao;
 	} else{
-		echo("ta errado né");
+		return false;
 	}
 }
 
