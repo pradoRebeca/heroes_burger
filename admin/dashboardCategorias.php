@@ -1,3 +1,8 @@
+<?php
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -61,7 +66,7 @@
 		
 		<div id="secaoFormulario"> 
 			<h2> Administração de Catergorias</h2>
-			<form id="frmFormulario" name="frmCategorias" action="" method="post"> 
+			<form id="frmFormulario" name="frmCategorias" action="controles/recebeDadosCategorias.php" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
 				<label> Nome: </label>
