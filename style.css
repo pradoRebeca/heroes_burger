@@ -89,9 +89,15 @@ li a{
 	height: 600px;
 	background-color: black;
 	transition: 2s;
+/*	animation: 3s ease-in 1s infinite reverse both running slidein;*/
+/*	animation: 2s linear 0s infinite alternate move_eye;*/
 	background-position: center;
 	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
+
+ @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
 
 /***** secao hamburguer ******/
 /*pesquisa*/
@@ -107,7 +113,7 @@ li a{
 }
 
 #iconeMenu{
-	width: 40px;
+	min-width: 40px;
 	height: inherit;
 }
 
@@ -131,8 +137,9 @@ li a{
 #secaoIconeMenu{
 	font-size: 0.8em;
 	letter-spacing: 1px;
-	width: 240px;
-	height: 160px;
+	min-width: 240px;
+	min-height: 160px;
+	overflow: hidden;
 	opacity: 0;
 	visibility: hidden;
 	color:white;
@@ -141,21 +148,23 @@ li a{
 	justify-content: space-around;
 	display: flex;
 	align-items: center;
-	padding-top: 15px;
+	padding: 15px;
 }
 
 #secaoIconeMenu ul{
 	list-style: none;
-	width: 220px;
+	min-width: inherit;
 	height: inherit;
 	font-size: 1.2em;
 	text-align: center;
 }
 
 #secaoIconeMenu li{
-	width: inherit;
+	min-width: inherit;
 	height: 35px;
-	padding-top: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #secaoIconeMenu li:hover:nth-child(1){

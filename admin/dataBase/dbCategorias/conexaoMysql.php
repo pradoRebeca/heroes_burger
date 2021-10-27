@@ -5,8 +5,7 @@ Data: 20/10/2021
 Autor: Rebeca Nascimento Prado 
 */
 
-require_once("../functions/config.php");
-
+//função para abir conexao com o banco
 function conexaoMysql(){
 	$server = (string) BD_SERVER;
 	$user = (string) BD_USER;

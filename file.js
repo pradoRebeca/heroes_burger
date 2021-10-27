@@ -49,22 +49,22 @@ container.classList.add("carrossel")
 let  status  =  "img1"
 
 const imagem1 = () => {
-	container.style.backgroundImage= "url(./img/hF3.jpg)"
+	container.style.backgroundImage= "url(./img/miranha.jpg)"
 	status = "img1"
 }
 
 const imagem2 = () => {
-	container.style.backgroundImage= "url(./img/marvel.png)"
+	container.style.backgroundImage= "url(./img/hf3.jpg)"
 	status = "img2"
 }
 
 const imagem3 = () => {
-	container.style.backgroundImage= "url(./img/banner4.jpg)"
+	container.style.backgroundImage= "url(./img/banner5.jpg)"
 	status = "img3"
 }
 
 const imagem4 = () => {
-	container.style.backgroundImage= "url(./img/banner9.jpg)"
+		container.style.backgroundImage= "url(./img/marvel.png)"
 	status = "img4"
 }
 

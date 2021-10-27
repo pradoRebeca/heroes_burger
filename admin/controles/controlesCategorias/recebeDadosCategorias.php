@@ -5,9 +5,9 @@ Data: 20/10/2021
 Autor: Rebeca Nascimento Prado 
 */
 
+require_once("../../functions/config.php");
+require_once(SRC . "dataBase/dbCategorias/inserirCategoria.php");
 
-require_once("../dataBase/inserirCategoria.php");
-require_once("../functions/config.php");
 
 if(isset($_POST["btnCadastrar"])){
 	$nome = $_POST["txtCategoria"];

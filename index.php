@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -48,16 +52,16 @@
 		<div id="pesquisaMenu">
             <form id="frmPesquisar" name="frmPesquisar" action="" method="">
                 <div id="iconeMenu">
-				<img class="iconeMenu" src="img/iconeMenu.png">
+					<img class="iconeMenu" src="img/iconeMenu.png">
 
-				<div id="secaoIconeMenu">
-					<ul>
-						<li> BURGER CLASSICO</li>
-						<li> BURGER CARNE </li>
-						<li> BURGER FRANGO </li>
-						<li> ACOMPANHAMENTOS </li>
-					</ul>
-				</div>
+					<div id="secaoIconeMenu">
+						<ul>
+							<li> BURGER CLASSICO</li>
+							<li> BURGER CARNE </li>
+							<li> BURGER FRANGO </li>
+							<li> ACOMPANHAMENTOS </li>
+						</ul>
+					</div>
                 </div>
 			
                 <div id="barraPesquisa">

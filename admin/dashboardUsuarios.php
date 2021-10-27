@@ -2,6 +2,7 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 
+$usuario = 'rebeca prado';
 ?>
 
 <!DOCTYPE html>
@@ -13,7 +14,7 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 <link type="text/css"
       rel="stylesheet"
       href="css/styleDash.css">
-<title> Categorias </title>
+<title> Usuarios </title>
 </head>
 
 <body>
@@ -33,12 +34,11 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 					<div class="admMenu"> 
 						<a href="">
 							<img src="../img/admProdutos.png" alt="" title="Produtos">
-						
 							<p>Adm. Produtos</p>
 						</a>
 					</div>
 					<div class="admMenu"> 
-						<a href="">
+						<a href="dashboardCategorias.php">
 							<img src="../img/admCategorias.png" alt="" title="Categorias">
 							<p>Adm. Categorias</p>
 						</a>
@@ -50,16 +50,16 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 						</a>
 					</div>
 					<div class="admMenu"> 
-						<a href="dashboardUsuarios.php">
+						<a href="">
 							<img src="../img/admUsuarios.png" alt="Produtos" title="Usuarios">
 							<p>Adm. Usuarios</p>
 						</a>
 					</div>
 				</div>
 				<div id="admUsuario"> 
-					<p> Rebeca Prado </p>
+					<p> <?=$usuario?> </p>
 					<div id="admUsuarioImg"> 
-						<img src="../img/admUsuarios.png" title="Imagem do Usuario">
+						<img src="../img/admUsuarios.png" alt="Sua imagem" title="Imagem do(a) <?=$usuario?> ">
 					</div>
 				</div>
 				<div id="admSairUsuario">
@@ -72,14 +72,24 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 		</div>
 		
 		<div id="secaoFormulario"> 
-			<h2> Cadastrar Catergorias</h2>
+			<h2> Cadastrar Usuários</h2>
 			<form id="frmFormulario" name="frmCategorias" action="controles/controlesCategorias/recebeDadosCategorias.php" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
-				<label> Nome da Categoria: </label>
-				<input placeholder="Insira o nome da categoria" type="text" name="txtCategoria" value="" maxlength="50">
+				<label>Nome do Usuário:</label>
+				<input placeholder="Insira o nome do Usuário" type="text" name="txtNome" value="" maxlength="50">
 				</div>
-
+				
+				<div class="campoFormulario"> 
+				<label>Login:</label>
+				<input placeholder="Insira o nome de Login" type="text" name="txtLogin" value="" maxlength="50">
+				</div>
+				
+				<div class="campoFormulario"> 
+				<label>Senha:</label>
+				<input placeholder="Insira uma Senha" type="text" name="txtSenha" value="" maxlength="10">
+				</div>
+				
 				<div id="buttomFormulario">
 					<input type="submit" name="btnCadastrar" value="Cadastrar">
 				</div>
@@ -88,32 +98,26 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 			<div id="alterarInformacoes">
 				<div id="headerInformacoes">
 					<div class="itemPesquisa"> 
-						Nome da Categoria
+						Nome do Usuario
 					</div>
 					<div class="propriedadePesquisa"> 
 						Opções
 					</div>
 				</div>
-				<?php
-					$exibirDados = listarCategorias();
-					
-					while($categoria = mysqli_fetch_assoc($exibirDados)){
-					?>
+		
 				<div class="secaoInformacoes">
 					<div class="itemPesquisa"> 
-						<?=$categoria['nome']?>
+					
 					</div>
 					<div class="propriedadePesquisa"> 
-<!--
 						<div>
 							<a href="">
 								<img src="../img/iconPesquisar.png" alt="" title="Pesquisar">
 							</a>
 						</div>
--->
 						<div>
 							<a onclick="return confirm('Tem certeza que deseja excluir?');"
-                               href="controles/controlesCategorias/excluiDadosCategoria.php?id=<?=$categoria['idcategorias']?>"> 
+                               href=""> 
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
 							</a>
 						</div>
@@ -124,9 +128,7 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 						</div>
 					</div>
 				</div>
-				<?php
-					}
-				?>
+				
 			</div>
 		</div>
 	</main>

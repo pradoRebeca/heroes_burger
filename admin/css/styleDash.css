@@ -88,6 +88,7 @@ main{
 	align-items:center; 
 	justify-content: center;
 	flex-direction: column;
+/*	background-color: aqua;*/
 }
 
 .admMenu img{
@@ -101,6 +102,32 @@ main{
 	height: 70px;
 	margin-top: 10px;
 	border-radius: 50px;
+/*	background-color: blue;*/
+}
+
+#admUsuarioImg img{
+	width: inherit;
+	height: inherit;
+}
+
+#admSairUsuario{
+	width: 80px;
+	height: 20px;
+/*	background-color: yellow;*/
+}
+
+#admSairUsuario a{
+	width: inherit;
+	height: inherit;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#admSairUsuario img {
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
 }
 
 a{
@@ -141,7 +168,9 @@ footer{
 	justify-content: flex-start;
 	align-items: center;
 	flex-direction: column;
-	padding: 100px;
+	padding-top: 100px;
+	padding-bottom: 50px;
+/*	background-color:black;*/
 }
 
 h2{
@@ -156,7 +185,6 @@ h2{
 	min-height: 100px;
 	height: auto;
 	overflow: hidden;
-	border-radius: 20px;
 /*	border: 1px solid black;*/
 	padding-bottom: 30px;
 /*	background-color: #c9c9c9;*/
@@ -168,51 +196,55 @@ h2{
 	height: auto;
 	overflow: hidden;
 	display: flex;
-	justify-content:space-around;
-	align-items: flex-start;
+	justify-content:flex-start;
 	flex-wrap: wrap;
-	padding: 30px;
+/*	padding: 30px;*/
 }
 
 .campoFormulario{
-	width: 470px;
-	height: 35px;
+	width: 320px;
+	height: 70px;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	flex-direction: column;
+	align-items: flex-start;
 	margin-bottom: 15px;
 	margin-top: 15px;
+	margin-right: 40px;
 }
 
 .campoFormulario input{
 	height: 35px;
-	width: 300px;
+	width: inherit;
 	outline: none;
 }
 
 .campoFormulario label{
-	width: 170px;
+	width: inherit;
 	height: 35px;
 	display: flex;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	align-items: center;
-	letter-spacing: 2px;
 /*	border-right: 2px solid black;*/
 	padding-right: 10px;
-	background-color: #c9c9c9;
+	font-weight: bold;
+/*	background-color: #c9c9c9;*/
 }
 
 #buttomFormulario{
-	width: inherit;
-	height: 30px;
+	width: 320px;
+	height: 70px;
 	display: flex;
-	justify-content: flex-end;
-	padding-right: 30px;
+	justify-content: center;
+	align-items: flex-end;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	margin-right: 40px;
 }
 
 #buttomFormulario input{
 	width: 120px;
-	height: inherit;
+	height: 30px;
 	color: green;
 	background-color: white;
 	border-radius: 15px;
@@ -233,30 +265,30 @@ h2{
 	min-height: 150px;
 	height: auto;
 	overflow: hidden;
-	border-radius: 20px;
-	padding: 30px;
-/*	border: 1px solid black;*/
 }
 
 .secaoInformacoes{
-	max-width: 1200px;;
+	max-width: inherit;
 	height: 50px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	border: 1px solid black;
+	border: 2px solid black;
 	margin-bottom: 10px;
 }
 
 #headerInformacoes{
-	max-width: 1200px;;
+	max-width:inherit;
 	height: 50px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-/*	border: 1px solid black;*/
+	border-top:2px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
 	font-weight: bold;
-	letter-spacing: 2px;
 	background-color: #c9c9c9;
 }
 
