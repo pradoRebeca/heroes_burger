@@ -118,7 +118,7 @@ require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 							</a>
 						</div>
 						<div>
-							<a href="">
+							<a href="controles/controlesCategorias/editaDadosCategorias.php?id=<?=$categoria['idcategorias']?>">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>

@@ -8,8 +8,8 @@ Autor: Rebeca Nascimento Prado
 
 require_once("conexaoMysql.php");
 
-function inserirCategoria($nome){
-	$sql = "insert into tblcategorias (nome) value ('".$nome."')";
+function inserirCategoria($tabela){
+	$sql = "insert into tblcategorias (nome) value ('". $tabela['nome']."')";
 	
 	$conexao = conexaoMysql();
 	

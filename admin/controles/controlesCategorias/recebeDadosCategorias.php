@@ -14,7 +14,10 @@ if(isset($_POST["btnCadastrar"])){
 	if($nome == null){
 		 echo(ERRO_CAMPO_VAZIO);
 	} else {
-		 if(inserirCategoria($nome)){
+        $tblCategorias = array(
+            "nome" => $nome
+        );
+		 if(inserirCategoria($tblCategorias)){
 			 echo(BD_SUCESSO_INSERIR);
 		 }else{
 			 echo(BD_ERRO_INSERIR);

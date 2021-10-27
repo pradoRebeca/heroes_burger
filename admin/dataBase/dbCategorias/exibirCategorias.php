@@ -18,4 +18,18 @@ function listar(){
 	}
 }
 
+
+function buscar($id){
+    $sql = "select * from tblcategorias where = " .$id;
+    
+    $conexao = conexaoMysql();
+    
+    if(mysql_query($conexao, $sql)){
+        return $conexao;
+    } else {
+        return true;
+    }
+    
+}
+
 ?>

@@ -1,4 +1,6 @@
 <?php
+require_once('admin/functions/config.php');
+require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
 
 ?>
 
@@ -56,10 +58,23 @@
 
 					<div id="secaoIconeMenu">
 						<ul>
-							<li> BURGER CLASSICO</li>
+                            <?php
+//                            $listar = listarCategorias();
+                                
+                            while($returnEstado=mysqli_fetch_assoc($listar)){
+                                
+                            ?>
+							<li> <?=$returnEstado['nome']?></li>
+
+                            <?php
+                            }
+                            ?>
+
+<!--
 							<li> BURGER CARNE </li>
 							<li> BURGER FRANGO </li>
 							<li> ACOMPANHAMENTOS </li>
+-->
 						</ul>
 					</div>
                 </div>
