@@ -146,6 +146,10 @@ footer{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+/*
+    position: absolute; 
+    bottom:0;
+*/
 }
 
 #footerCopyright, #footerVersao{
@@ -301,6 +305,19 @@ h2{
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+
+.itemPesquisa1, itemPesquisa2{
+    width: 40%;
+	height: inherit;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+    border-right: 2px solid black;
+}
+
+.itemPesquisa2{
+    border: none;
 }
 
 .propriedadePesquisa{

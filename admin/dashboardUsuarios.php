@@ -1,8 +1,8 @@
 <?php
 require_once("functions/config.php");
-require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
+require_once(SRC ."controles/controlesUsuarios/exibeDadosUsuarios.php");
 
-$usuario = 'rebeca prado';
+
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $usuario = 'rebeca prado';
 	<?php require_once("estruturaHtml/header.php");?>
 	<div id="secaoFormulario"> 
 			<h2> Cadastrar Usuários</h2>
-			<form id="frmFormulario" name="frmCategorias" action="" method="post"> 
+			<form id="frmFormulario" name="frmCategorias" action="controles/controlesUsuarios/recebeDadosUsuarios.php" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
 				<label>Nome do Usuário:</label>
@@ -35,7 +35,7 @@ $usuario = 'rebeca prado';
 				
 				<div class="campoFormulario"> 
 				<label>Senha:</label>
-				<input placeholder="Insira uma Senha" type="text" name="txtSenha" value="" maxlength="10">
+				<input placeholder="Insira uma Senha" type="password" name="txtSenha" value="" maxlength="15">
 				</div>
 				
 				<div id="buttomFormulario">
@@ -45,27 +45,36 @@ $usuario = 'rebeca prado';
 			</form>
 			<div id="alterarInformacoes">
 				<div id="headerInformacoes">
-					<div class="itemPesquisa"> 
-						Nome do Usuario
+					<div class="itemPesquisa1"> 
+						Nome do Usuário:
 					</div>
+                    
+                    <div class="itemPesquisa2"> 
+						Login: 
+					</div>
+                    
 					<div class="propriedadePesquisa"> 
 						Opções
 					</div>
 				</div>
-		
+		          <?php
+                        $exibirDados = listarUsuarios();
+                        
+                        while($usuarios =mysqli_fetch_assoc($exibirDados)){
+                
+                    ?>
 				<div class="secaoInformacoes">
-					<div class="itemPesquisa"> 
-					
+					<div class="itemPesquisa1"> 
+					   <?=$usuarios['nome']?>
+					</div>
+                    
+                    <div class="itemPesquisa2"> 
+					   <?=$usuarios['login']?>
 					</div>
 					<div class="propriedadePesquisa"> 
 						<div>
-							<a href="">
-								<img src="../img/iconPesquisar.png" alt="" title="Pesquisar">
-							</a>
-						</div>
-						<div>
 							<a onclick="return confirm('Tem certeza que deseja excluir?');"
-                               href=""> 
+                               href="controles/controlesUsuarios/excluirDadosUsuarios.php?id=<?=$usuarios['idusuarios']?>"> 
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
 							</a>
 						</div>
@@ -76,6 +85,10 @@ $usuario = 'rebeca prado';
 						</div>
 					</div>
 				</div>
+                <?php
+                        }
+                
+                ?>
 				
 			</div>
 		</div>

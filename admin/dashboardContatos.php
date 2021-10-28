@@ -1,3 +1,11 @@
+<?php
+
+require_once("functions/config.php");
+require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,6 +20,53 @@
 
 <body>
 	<?php require_once("estruturaHtml/header.php");?>
+    	<div id="secaoFormulario"> 
+			<h2> Contatos </h2>
+			<div id="alterarInformacoes">
+				<div id="headerInformacoes">
+					<div class="itemPesquisa1"> 
+						Nome:
+					</div>
+                    
+                    <div class="itemPesquisa2"> 
+						E-mail:
+					</div>
+                    
+					<div class="propriedadePesquisa"> 
+						Opções:
+					</div>
+				</div>
+                <?php
+                    $exibirDados = listarContatos;
+                    while($returnContato = mysqli_fetch_assoc($exibirDados)){
+                ?>
+				<div class="secaoInformacoes">
+					<div class="itemPesquisa1"> 
+                        <?=$returnContato['nome']?>
+					</div>
+                    
+                    <div class="itemPesquisa2"> 
+					     <?=$returnContato['email']?>
+					</div>
+					<div class="propriedadePesquisa"> 
+						<div>
+							<a onclick="return confirm('Tem certeza que deseja excluir?');"
+                               href=""> 
+								<img src="../img/iconExcluir.png" alt="" title="Excluir">
+							</a>
+						</div>
+						<div>
+							<a href="">
+								<img src="../img/iconAlterar.png" alt="" title="Alterar">
+							</a>
+						</div>
+					</div>
+				</div>
+                <?php
+                }
+                ?>
+			</div>
+		</div>
 	<?php require_once("estruturaHtml/footer.php");?>
 </body>
 </html>
