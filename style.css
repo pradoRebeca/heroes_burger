@@ -97,7 +97,7 @@ li a{
 	background-size: contain;
 }
 
- @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+/* @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }*/
 
 /***** secao hamburguer ******/
 /*pesquisa*/
@@ -138,7 +138,7 @@ li a{
 	font-size: 0.8em;
 	letter-spacing: 1px;
 	min-width: 240px;
-	min-height: 160px;
+	min-height: 60px;
 	overflow: hidden;
 	opacity: 0;
 	visibility: hidden;
@@ -167,25 +167,31 @@ li a{
 	align-items: center;
 }
 
-#secaoIconeMenu li:hover:nth-child(1){
+/*
+#secaoIconeMenu li:hover:nth-child(2n+1){
 	border-bottom: #b5a93a 2px solid;
 	border-top: #b5a93a 2px solid;
 }
+*/
 
-#secaoIconeMenu li:hover:nth-child(2){
+#secaoIconeMenu li:hover:nth-child(2n){
 	border-bottom: #a82f2f 2px solid;
 	border-top: #a82f2f 2px solid;
 }
 
-#secaoIconeMenu li:hover:nth-child(3){
+/*
+#secaoIconeMenu li:hover:nth-child(2n+1){
 	border-bottom: #2d753e 2px solid;
 	border-top: #2d753e 2px solid;
 }
+*/
 
-#secaoIconeMenu li:hover:nth-child(4){
+	
+#secaoIconeMenu li:hover:nth-child(2n+1){
 	border-bottom:  #1785ad 2px solid;
 	border-top:  #1785ad 2px solid;
 }
+	
 
 /*barra de pesquisa*/
 #iconePesquisa{

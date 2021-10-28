@@ -20,14 +20,13 @@ function listar(){
 
 
 function buscar($id){
-    $sql = "select * from tblcategorias where = " .$id;
-    
+    $sql = "select * from tblcategorias where idcategorias = ".$id;
     $conexao = conexaoMysql();
-    
-    if(mysql_query($conexao, $sql)){
-        return $conexao;
+   
+    if($seletc=mysqli_query($conexao, $sql)){
+        return $seletc;
     } else {
-        return true;
+        return false;
     }
     
 }

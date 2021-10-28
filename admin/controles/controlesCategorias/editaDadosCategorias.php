@@ -10,16 +10,16 @@ require_once("../../functions/config.php");
 require_once(SRC ."dataBase/dbCategorias/exibirCategorias.php");
 
 $idCategoria = $_GET['id'];
-
+echo($idCategoria);
 $dadosCategoria = buscar($idCategoria);
 
-if($returnCategoria = mysqli_fetch_assoc($dadosCategoria)){
+if($returnCategoria=mysqli_fetch_assoc($dadosCategoria)){
     
     session_start();
-    
-    $_SESSION['categoria'] = $returnCategoria;
-    
-    header('location:dashboardCategorias.php');
+
+    $_SESSION['categorias']= $returnCategoria;
+	
+ header('location:../../dashboardCategorias.php');
 } else {
     echo(BD_ERRO_EDITAR);
 }

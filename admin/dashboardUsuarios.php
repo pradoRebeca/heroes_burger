@@ -14,66 +14,14 @@ $usuario = 'rebeca prado';
 <link type="text/css"
       rel="stylesheet"
       href="css/styleDash.css">
-<title> Usuarios </title>
+<title> Usuários </title>
 </head>
 
 <body>
-	<header>
-		<div id="headerTitulo"> 
-			<h1> CMS <span id="nomeEmpresa">Heroes Burger</span></h1>
-			<h4> Gerenciamento de Conteúdo do Site </h4>
-		</div>
-		<div id="headerLogo"> 
-			<img src="../img/logo2.png"> 
-		</div>
-	</header>
-	<main> 
-		<div id="organizarSecaoAdm">
-			<div id="secaoAdm"> 
-				<div id="admListaMenu"> 
-					<div class="admMenu"> 
-						<a href="">
-							<img src="../img/admProdutos.png" alt="" title="Produtos">
-							<p>Adm. Produtos</p>
-						</a>
-					</div>
-					<div class="admMenu"> 
-						<a href="dashboardCategorias.php">
-							<img src="../img/admCategorias.png" alt="" title="Categorias">
-							<p>Adm. Categorias</p>
-						</a>
-					</div>
-					<div class="admMenu"> 
-						<a href="">
-							<img src="../img/admContatos.png" alt="" title="Contatos">
-							<p>Adm. Contatos</p>
-						</a>
-					</div>
-					<div class="admMenu"> 
-						<a href="">
-							<img src="../img/admUsuarios.png" alt="Produtos" title="Usuarios">
-							<p>Adm. Usuarios</p>
-						</a>
-					</div>
-				</div>
-				<div id="admUsuario"> 
-					<p> <?=$usuario?> </p>
-					<div id="admUsuarioImg"> 
-						<img src="../img/admUsuarios.png" alt="Sua imagem" title="Imagem do(a) <?=$usuario?> ">
-					</div>
-				</div>
-				<div id="admSairUsuario">
-					<a href="login.html"> 
-						<img src="../img/iconeSair.png" alt="Sair" title="Sair">
-						<p> Sair</p> 
-					</a>
-				</div>
-			</div>
-		</div>
-		
-		<div id="secaoFormulario"> 
+	<?php require_once("estruturaHtml/header.php");?>
+	<div id="secaoFormulario"> 
 			<h2> Cadastrar Usuários</h2>
-			<form id="frmFormulario" name="frmCategorias" action="controles/controlesCategorias/recebeDadosCategorias.php" method="post"> 
+			<form id="frmFormulario" name="frmCategorias" action="" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
 				<label>Nome do Usuário:</label>
@@ -131,17 +79,7 @@ $usuario = 'rebeca prado';
 				
 			</div>
 		</div>
-	</main>
-	<footer> 
-		<div id="footerCopyright">
-			<p> &copy; Copyright 2021 </p>
-			<p> Todos os direitos reservados - Politica de Privacidade</p>
-		</div>
-		<div id="footerVersao"> 
-			<p>Desenvolvido por Rebeca Prado</p>
-			<p>Versão 1.0.0</p>
-		</div>
-	</footer>
+	<?php require_once("estruturaHtml/footer.php");?>
 </body>
 </html>
 

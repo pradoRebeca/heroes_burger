@@ -9,8 +9,6 @@ require_once(SRC."dataBase/dbCategorias/deletarCategorias.php");
 
 $id = $_GET["id"];
 
-echo($id);
-
 if(deletarCategorias($id)){
 	echo(BD_SUCESSO_DELETAR);
 } else {

@@ -59,22 +59,13 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
 					<div id="secaoIconeMenu">
 						<ul>
                             <?php
-//                            $listar = listarCategorias();
-                                
-                            while($returnEstado=mysqli_fetch_assoc($listar)){
-                                
+                            $listar = listarCategorias();
+                            while($returnCategoria=mysqli_fetch_assoc($listar)){               
                             ?>
-							<li> <?=$returnEstado['nome']?></li>
-
+								<li> <?=strtoupper($returnCategoria['nome'])?></li>
                             <?php
                             }
                             ?>
-
-<!--
-							<li> BURGER CARNE </li>
-							<li> BURGER FRANGO </li>
-							<li> ACOMPANHAMENTOS </li>
--->
 						</ul>
 					</div>
                 </div>

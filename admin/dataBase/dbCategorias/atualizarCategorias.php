@@ -6,5 +6,20 @@ Data: 27/10/21
 Autor: Rebeca Nascimento Prado 
 */
 
+require_once(SRC . "dataBase/dbCategorias/conexaoMysql.php");
+
+function editarCategoria($arrayCategorias){
+	$sql = "update tblcategorias set 
+	nome = '".$arrayCategorias['nome']."' 
+	where idcategorias = ".$arrayCategorias['id'];
+	
+	$conexao = conexaoMysql();
+	
+	if(mysqli_query($conexao, $sql)){
+		return true;
+	} else {
+		return false;
+	}
+}
 
 ?>

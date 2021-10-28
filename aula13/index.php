@@ -3,7 +3,7 @@
     require_once("functions/config.php");
 
     require_once(SRC.'bd/conexaoMysql.php');
-    require_once(SRC.'controles/exibeDadosClientes.php');
+   require_once(SRC.'controles/exibeDadosClientes.php');
 
 
  //Ativa a utilização de variaveis de sessão
