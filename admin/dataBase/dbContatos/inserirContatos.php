@@ -6,24 +6,25 @@ Data: 28/10/2021
 Autor: Rebeca Nascimento Prado 
 */
 
-require_once("conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 
-function inserirContatos($tblContatos){
+function inserirContatos($array){
+	
     $sql = "insert into tblcontatos (nome, 
                                     email, 
                                     telefone) 
                                     values(
-                                    '".$tblContatos['nome']."',
-                                    '".$tblContatos['email']."',
-                                    '".$tblContatos['telefone']."'
+                                    '".$array['nome']."',
+                                    '".$array['email']."',
+                                    '".$array['telefone']."'
                                     )";
         
     $conexao = conexaoMysql();
     
     if(mysqli_query($conexao, $sql)){
         return true;
-    } else{
-        return "erro no banco";
+    } else {
+        return false;
     }
 }
 

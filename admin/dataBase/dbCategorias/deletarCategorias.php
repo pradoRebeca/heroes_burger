@@ -6,15 +6,14 @@ Data: 26/10/2021
 Autor: Rebeca Nascimento Prado 
 */
 
-require_once("conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 function deletarCategorias($idCategoria){
 	$id = (int) $idCategoria;
 	$sql = "delete from tblcategorias where idcategorias = ".$id;
 	
 	$conexao = conexaoMysql();
-	$delete = mysqli_query($conexao, $sql);
 	
-	if($delete){
+	if(mysqli_query($conexao, $sql);){
 		return true;
 	} else {
 		return false;

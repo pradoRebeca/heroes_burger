@@ -6,7 +6,7 @@ Autor: Rebeca Nascimento Prado
 */
 
 
-require_once("conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 
 function inserirCategoria($tabela){
 	$sql = "insert into tblcategorias (nome) values('". $tabela['nome']."')";

@@ -12,4 +12,5 @@ function exibirClientes(){
     return $dados;
 }
 
+
 ?>

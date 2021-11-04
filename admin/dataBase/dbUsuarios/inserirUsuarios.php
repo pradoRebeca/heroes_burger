@@ -4,7 +4,7 @@ Obejteivo: Arquivo inserir dados no Banco de Dados;
 Data: 28/10/2021
 Autor: Rebeca Nascimento Prado 
 */
-require_once("conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 
 function inserirUsuarios($tblusuarios){
     $sql = "insert into tblusuarios (nome,

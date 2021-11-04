@@ -15,8 +15,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $nome = $_POST['txtNome'];
     $email = $_POST['txtEmail'];
     $telefone = $_POST['txtTelefone'];
-    
-    if($nome == null || $email == null || $telefone == null){
+  
+    if($nome == "" || $email == "" || $telefone == ""){
         echo(ERRO_CAMPO_VAZIO);
     }else{
          $tblContatos = array(
@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         if(inserirContatos($tblContatos)){
             echo(SUCESSO_INSERIR_CONTATO);
-        }else{
+        }else{	
             echo(ERRO_INSERIR_CONTATO);
         }
     }
