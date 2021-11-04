@@ -6,7 +6,7 @@ Data: 27/10/21
 Autor: Rebeca Nascimento Prado 
 */
 
-require_once(SRC . "dataBase/dbCategorias/conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 
 function editarCategoria($arrayCategorias){
 	$sql = "update tblcategorias set 

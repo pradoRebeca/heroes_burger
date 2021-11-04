@@ -350,3 +350,15 @@ h2{
 }
 
 
+/*style select*/
+
+.campoFormulario select{
+	height: 35px;
+	width: inherit;
+	outline: none;
+}
+
+
+
+
+

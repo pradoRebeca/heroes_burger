@@ -10,6 +10,7 @@ require_once(SRC . "dataBase/dbContatos/exibirContatos.php");
 function listarContatos(){
     $dados = listar();
     
-    return $dados;
+  return $dados;
+	
 }
 ?>

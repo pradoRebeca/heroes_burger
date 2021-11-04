@@ -37,8 +37,10 @@ require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
 					</div>
 				</div>
                 <?php
-                    $exibirDados = listarContatos;
+                    $exibirDados = listarContatos();
+			
                     while($returnContato = mysqli_fetch_assoc($exibirDados)){
+			
                 ?>
 				<div class="secaoInformacoes">
 					<div class="itemPesquisa1"> 
@@ -51,19 +53,14 @@ require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
 					<div class="propriedadePesquisa"> 
 						<div>
 							<a onclick="return confirm('Tem certeza que deseja excluir?');"
-                               href=""> 
+                               href="controles/controlesContatos/excluiDadosContatos.php?id=<?=$returnContato['idcontatos']?>"> 
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
-							</a>
-						</div>
-						<div>
-							<a href="">
-								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>
 					</div>
 				</div>
                 <?php
-                }
+					}
                 ?>
 			</div>
 		</div>

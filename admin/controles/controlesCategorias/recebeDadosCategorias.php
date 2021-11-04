@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		//validação para saber se é para cadastrar uma nova categoria
 		if(strtoupper($_GET['modo']) == 'CADASTRAR'){
 			if(inserirCategoria($tblCategorias)){
-				echo(BD_SUCESSO_INSERIR);
+				echo(BD_SUCESSO_INSERIR_CATEGORIA);
 			}else{
 			 	echo(BD_ERRO_INSERIR);
 		 	}

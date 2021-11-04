@@ -209,7 +209,7 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
         </div>
         
         <div id="contatosInfo">
-        <form name="frmMensagem" id="frmMensagem" action="" method="">
+        <form name="frmMensagem" id="frmMensagem" action="admin/controles/controlesContatos/recebeDadosContatos.php" method="POST">
             <H3> ENTRE EM CONTATO </H3>
             <div id="contatosLabel"> 
                 <div class="label">
@@ -225,9 +225,9 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
                 </div>
             </div>
             <div id="contatosInput"> 
-                <input type="text" name="btnNome" value=""> 
-                <input type="email" name="btnEmail" value=""> 
-                <input type="telefone" name="btnCelular" value=""> 
+                <input type="text" name="txtNome" value="" maxlength="100"> 
+                <input type="email" name="txtEmail" value="" maxlength="80"> 
+                <input type="telefone" name="txtTelefone" maxlength="10" value=""> 
             </div>
            <input id="btnSalvar" type="submit" name="btnSalvar" value="Enviar"> 
         </form>

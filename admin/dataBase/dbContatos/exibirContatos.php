@@ -6,7 +6,7 @@ Data: 20/10/2021
 Autor: Rebeca Nascimento Prado 
 */
 
-require_once("conexaoMysql.php");
+require_once(SRC."dataBase/conexaoMysql.php");
 
 function listar(){
     $sql = "select * from tblcontatos";
@@ -14,7 +14,7 @@ function listar(){
     $conexao = conexaoMysql();
     
     if($select = mysqli_query($conexao, $sql)){
-        return true;
+        return $select;
     } else {
         return false;
     }
