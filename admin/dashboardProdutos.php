@@ -25,23 +25,23 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
                     <label>Nome Produto: </label>
-                    <input placeholder="Insira o nome do Usuário" type="text" name="txtNomeProduto" value="" maxlength="50">
+                    <input placeholder="Insira o nome" type="text" name="txtNomeProduto" value="" maxlength="50">
 				</div>
 				
 				<div class="campoFormulario"> 
                     <label>Descrição:</label>
-                    <input placeholder="Insira o nome de Login" type="text" name="txtDescricao" value="" maxlength="80">
+                    <input placeholder="Insira a descrição dos componentes" type="text" name="txtDescricao" value="" maxlength="100">
 				</div>
 				
 				<div class="campoFormulario"> 
                     <label>Preço:</label>
-                    <input placeholder="Insira uma Senha" type="password" name="txtSenha" value="" maxlength="15">
+                    <input placeholder="Insira o valor do produto" type="text" name="txtPreco" value="" maxlength="10">
 				</div>
 				
                 
                 <div class="campoFormulario"> 
                     <label>Preço Promoção:</label>
-                    <input placeholder="Insira uma Senha" type="password" name="txtSenha" value="" maxlength="5">
+                    <input placeholder="Insira o valor promocional" type="text" name="txtPromocao" value="" maxlength="10">
 				</div>
                 
                 <div class="campoFormulario"> 

@@ -6,10 +6,23 @@ Autor: Rebeca Nascimento Prado
 */
 
 /* conexão de casa*/
+
 //const BD_SERVER = "localhost";
 //const BD_USER = "root";
 //const BD_PASSWORD = "abc127";
 //const BD_DATABASE = "dbheroesburger";
+//caminho url casa
+//define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
+
+//conexão casa
+//const BD_SERVER = "localhost";
+//const BD_USER = "root";
+//const BD_PASSWORD = "abc127";
+//const BD_DATABASE = "dbheroesburger";
+
+//url senai
+define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
+
 //caminho url casa
 //define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
 
@@ -19,7 +32,8 @@ const BD_USER = "root";
 const BD_PASSWORD = "bcd127";
 const BD_DATABASE = "dbheroesburger";
 //url senai
-define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
+//define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
+
 
 const ERRO_CAMPO_VAZIO = "<script> alert('Preencha todos os campos'); window.history.back(); </script>";
 

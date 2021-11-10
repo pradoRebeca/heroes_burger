@@ -11,9 +11,10 @@ function deletarCategorias($idCategoria){
 	$id = (int) $idCategoria;
 	$sql = "delete from tblcategorias where idcategorias = ".$id;
 	
-	$conexao = conexaoMysql();
-	
+	$conexao = conexaoMysql();	
+
 	if(mysqli_query($conexao, $sql)){
+
 		return true;
 	} else {
 		return false;
