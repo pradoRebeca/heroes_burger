@@ -21,7 +21,7 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 	<?php require_once("estruturaHtml/header.php");?>
     	<div id="secaoFormulario"> 
 			<h2> Cadastrar Produtos</h2>
-			<form id="frmFormulario" name="frmCategorias" action="" method="post"> 
+			<form enctype="multipart/form-data"  id="frmFormulario" name="frmCategorias" action="controles/controlesProdutos/recebeDadosProdutos.php" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
                     <label>Nome Produto: </label>
@@ -61,7 +61,9 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
                         ?>
                     </select>
 				</div>
-                
+                <div class="campoFormulario"> 
+                   <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
+				</div>
 				<div id="buttomFormulario">
 					<input type="submit" name="btnCadastrar" value="Cadastrar">
 				</div>

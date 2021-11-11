@@ -42,12 +42,15 @@ const BD_ERRO_INSERIR = "<script> alert('Não foi possivel inserir registro'); w
 
 const ERRO_INSERIR_CONTATO = "<script> alert('Não foi possivel enviar os seus dados, por favor tente novamente'); window.history.back(); </script>";
 
+
 //sucesso inserir 
 const BD_SUCESSO_INSERIR_CATEGORIA = "<script> alert('Registro salvo com sucesso');window.location.href = '../../dashboardCategorias.php'</script>";
 
 const BD_SUCESSO_INSERIR_USUARIO = "<script> alert('Registro salvo com sucesso');window.location.href = '../../dashboardUsuarios.php'</script>";
 
 const SUCESSO_INSERIR_CONTATO = "<script> alert('Contato enviado com sucesso');window.location.href = '../../../index.php'</script>";
+
+const SUCESSO_INSERIR_PRODUTOS = "<script> alert('Contato enviado com sucesso');window.location.href = '../../dashboardProdutos.php''</script>";
 
 //sucesso deletar
 const BD_SUCESSO_DELETAR_CATEGORIA = "<script> alert('Registro deletado com sucesso');window.location.href = '../../dashboardCategorias.php'</script>";
