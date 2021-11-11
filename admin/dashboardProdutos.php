@@ -84,29 +84,38 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 					</div>
 				</div>
 		          
+                <?php 
+                $exibirDados  = listarProduto();
+                
+                while($returnProdutos = mysql_fetch_assoc($exibirDados)){
+                
+                ?>
 				<div class="secaoInformacoes">
 					<div class="itemPesquisa1"> 
-					  
+					  <?=$returnProdutos['nome']?>
 					</div>
                     
                     <div class="itemPesquisa2"> 
-					   
+					   <?=$returnProdutos['descricao']?>
 					</div>
 					<div class="propriedadePesquisa"> 
 						<div>
 							<a onclick="return confirm('Tem certeza que deseja excluir?');"
-                               href=""> 
+                               href="controles/controlesProdutos/excluiDadosProdutos.php"> 
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
 							</a>
 						</div>
 						<div>
-							<a href="">
+							<a href="controles/controlesProdutos/exibirDadosProdutos.php">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>
 					</div>
 				</div>
-            
+                <?php
+                }
+                
+                ?>
 			</div>
 		</div>
     

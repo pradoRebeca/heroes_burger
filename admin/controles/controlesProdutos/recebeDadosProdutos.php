@@ -26,14 +26,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             "descricao" => $descricao,
             "preco" => $preco,
             "precoPromocao" => $preco,
-            "foto" => $foto,
-            "categoria" => $categoria
+            "foto" => $foto
         );
     
         if(inserirProduto($tblprodutos)){
-            echo(SUCESSO_INSERIR_PRODUTOS);
+            echo("deu certo");
         }else{
-            echo(BD_ERRO_INSERIR);
+            echo("erro");
         }
      
     }

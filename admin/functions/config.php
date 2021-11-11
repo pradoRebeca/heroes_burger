@@ -50,7 +50,7 @@ const BD_SUCESSO_INSERIR_USUARIO = "<script> alert('Registro salvo com sucesso')
 
 const SUCESSO_INSERIR_CONTATO = "<script> alert('Contato enviado com sucesso');window.location.href = '../../../index.php'</script>";
 
-const SUCESSO_INSERIR_PRODUTOS = "<script> alert('Contato enviado com sucesso');window.location.href = '../../dashboardProdutos.php''</script>";
+const SUCESSO_INSERIR_PRODUTOS = "<script> alert('Produto enviado com sucesso');window.location.href = '../../dashboardProdutos.php''</script>";
 
 //sucesso deletar
 const BD_SUCESSO_DELETAR_CATEGORIA = "<script> alert('Registro deletado com sucesso');window.location.href = '../../dashboardCategorias.php'</script>";
