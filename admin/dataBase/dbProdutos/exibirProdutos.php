@@ -6,12 +6,12 @@ Autor: Rebeca Nascimento Prado
 */
 
 
-function listar(){
+function listaProduto(){
     $sql = "select * from tblprodutos";
     
     $conexao = conexaoMysql();
     
-    if($select = mysqli_query($conexao, sql)){
+    if($select = mysqli_query($conexao, $sql)){
         return $select;
     } else {
         return false; 

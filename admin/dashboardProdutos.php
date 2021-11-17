@@ -1,7 +1,8 @@
 <?php
 require_once("functions/config.php");
 require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
-
+require_once(SRC.'controles/controlesProdutos/exibeDadosProdutos.php');
+$dadosCategoria = listarCategorias();
 ?>
 
 
@@ -44,22 +45,21 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
                     <input placeholder="Insira o valor promocional" type="text" name="txtPromocao" value="" maxlength="10">
 				</div>
                 
-                <div class="campoFormulario"> 
-                    <label>Categoria:</label>
-                    <select name="sltCategoria"> 
-                        <option value=""> Selecione uma categoria</option>
+                <div class="campoFormularioCheck"> 
+                    <p>Categoria:</p>
+      					$a
                         <?php
-                        
-                        $dadosCategoria = listarCategorias();
-                        
-                        while($returnCategoria=mysqli_fetch_assoc($dadosCategoria)){
+
+						while($returnCategoria=mysqli_fetch_assoc($dadosCategoria)){
             
                         ?>
-                            <option value="<?=$returnCategoria['id']?>"> <?=$returnCategoria['nome']?> </option>
+						
+                        <input value="" type="checkbox" name="chk<?=$returnCategoria['idcategorias']?>">  
+						<label><?=$returnCategoria['nome']?> </label>
                         <?php
                         }
                         ?>
-                    </select>
+                  
 				</div>
                 <div class="campoFormulario"> 
                    <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
@@ -85,9 +85,9 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 				</div>
 		          
                 <?php 
-                $exibirDados  = listarProduto();
+                $exibirDados  = listarProdutos();
                 
-                while($returnProdutos = mysql_fetch_assoc($exibirDados)){
+                while($returnProdutos = mysqli_fetch_assoc($exibirDados)){
                 
                 ?>
 				<div class="secaoInformacoes">
@@ -106,7 +106,7 @@ require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 							</a>
 						</div>
 						<div>
-							<a href="controles/controlesProdutos/exibirDadosProdutos.php">
+							<a href="controles/controlesProdutos/exibirDadosProdutos.php?id= <?=$returnProdutos['idprodutos']?>">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>

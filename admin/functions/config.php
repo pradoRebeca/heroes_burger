@@ -7,12 +7,12 @@ Autor: Rebeca Nascimento Prado
 
 /* conexão de casa*/
 
-//const BD_SERVER = "localhost";
-//const BD_USER = "root";
-//const BD_PASSWORD = "abc127";
-//const BD_DATABASE = "dbheroesburger";
+const BD_SERVER = "localhost";
+const BD_USER = "root";
+const BD_PASSWORD = "abc127";
+const BD_DATABASE = "dbheroesburger";
 //caminho url casa
-//define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
+define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
 
 //conexão casa
 //const BD_SERVER = "localhost";
@@ -21,16 +21,16 @@ Autor: Rebeca Nascimento Prado
 //const BD_DATABASE = "dbheroesburger";
 
 //url senai
-define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
+//define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
 
 //caminho url casa
 //define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
 
 //conexão senai
-const BD_SERVER = "localhost";
-const BD_USER = "root";
-const BD_PASSWORD = "bcd127";
-const BD_DATABASE = "dbheroesburger";
+//const BD_SERVER = "localhost";
+//const BD_USER = "root";
+//const BD_PASSWORD = "bcd127";
+//const BD_DATABASE = "dbheroesburger";
 //url senai
 //define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
 
@@ -50,7 +50,7 @@ const BD_SUCESSO_INSERIR_USUARIO = "<script> alert('Registro salvo com sucesso')
 
 const SUCESSO_INSERIR_CONTATO = "<script> alert('Contato enviado com sucesso');window.location.href = '../../../index.php'</script>";
 
-const SUCESSO_INSERIR_PRODUTOS = "<script> alert('Produto enviado com sucesso');window.location.href = '../../dashboardProdutos.php''</script>";
+const BD_SUCESSO_INSERIR_PRODUTO = "<script> alert('Registro salvo com sucesso');window.location.href = '../../dashboardProdutos.php'</script>";
 
 //sucesso deletar
 const BD_SUCESSO_DELETAR_CATEGORIA = "<script> alert('Registro deletado com sucesso');window.location.href = '../../dashboardCategorias.php'</script>";

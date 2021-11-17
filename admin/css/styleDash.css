@@ -220,13 +220,26 @@ h2{
 	margin-right: 40px;
 }
 
-.campoFormulario input{
+.campoFormularioCheck{
+	min-width: 320px;
+	min-height: 70px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	margin-right: 40px;
+	background-color: aqua;
+}
+
+.campoFormulario input, .campoFormularioCheck input{
 	height: 35px;
 	width: inherit;
 	outline: none;
 }
 
-.campoFormulario label{
+.campoFormulario label, .campoFormularioCheck label{
 	width: inherit;
 	height: 35px;
 	display: flex;
