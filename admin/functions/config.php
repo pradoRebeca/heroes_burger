@@ -37,9 +37,13 @@ define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/'
 
 const ERRO_CAMPO_VAZIO = "<script> alert('Preencha todos os campos'); window.history.back(); </script>";
 
+const ERRO_DADOS_VALIDOS = "<script> alert('Preencha os campos com valores validos'); window.history.back(); </script>";
+
+const ERRO_SEM_CATEGORIA = "<script> alert('O produto deverá percenter a no minino uma categoria'); window.history.back(); </script>";
+
 //erros inserir 
 const BD_ERRO_INSERIR = "<script> alert('Não foi possivel inserir registro'); window.history.back(); </script>";
-
+	
 const ERRO_INSERIR_CONTATO = "<script> alert('Não foi possivel enviar os seus dados, por favor tente novamente'); window.history.back(); </script>";
 
 
@@ -68,4 +72,14 @@ const BD_ERRO_EDITAR = "<script> alert('Não foi possivel editar o registro'); w
 const BD_SUCESSO_EDITAR = "<script> alert('Registro atualizado com sucesso');window.location.href = '../../dashboardCategorias.php';</script>";
 
 const BD_SUCESSO_EDITAR_USUARIOS = "<script> alert('Registro atualizado com sucesso');window.location.href = '../../dashboardUsuarios.php';</script>";
+
+
+
+//upload de arquivos 
+define('NOME_DIRETORIO_FILE' , 'arquivos/');
+
+$extensoes_permitidas_file = array("image/png", "image/jpg", "image/jpeg");
+
+define('EXTENSOES_PERMITIDAS_FILE', $extensoes_permitidas_file);
+const TAMANHO_FILE = '5120';
 ?>

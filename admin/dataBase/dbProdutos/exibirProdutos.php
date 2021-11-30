@@ -7,7 +7,7 @@ Autor: Rebeca Nascimento Prado
 
 
 function listaProduto(){
-    $sql = "select * from tblprodutos";
+    $sql = "select * from tblprodutos order by idprodutos desc";
     
     $conexao = conexaoMysql();
     

@@ -8,7 +8,7 @@ Autor: Rebeca Nascimento Prado
 require_once(SRC."dataBase/conexaoMysql.php");
 
 function listar(){
-    $sql = "select * from tblusuarios";
+    $sql = "select * from tblusuarios order by idusuarios desc";
     
     $conexao = conexaoMysql();
     
