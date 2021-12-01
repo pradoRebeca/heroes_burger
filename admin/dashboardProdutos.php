@@ -3,6 +3,32 @@ require_once("functions/config.php");
 require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 require_once(SRC.'controles/controlesProdutos/exibeDadosProdutos.php');
 $dadosCategoria = listarCategorias();
+
+
+session_start();
+
+//declarando variaveis 
+$nome = (string) null;
+$descricao = (string) null;
+$preco = (double) null;
+$valorPercentual = (int) null;
+$foto = (string) "sem-foto.jpg";
+$marcado = (string) null;
+$id = (int) 0;
+$modo = (string) "Cadastrar";
+
+if(isset($_SESSION['produtos'])){
+	$nome = $_SESSION['produtos']['nome'];
+	$id = $_SESSION['produtos']['idprodutos'];
+	$descricao = $_SESSION['produtos']['descricao'];
+	$preco = $_SESSION['produtos']['preco'];
+	$foto = $_SESSION['produtos']['imagens'];
+	$valorPercentual = $_SESSION['produtos']['precoPromocao'];
+	$marcado =;
+
+	$modo = "Atualizar";
+	unset($_SESSION['produtos']);
+}
 ?>
 
 
@@ -22,27 +48,31 @@ $dadosCategoria = listarCategorias();
 	<?php require_once("estruturaHtml/header.php");?>
     	<div id="secaoFormulario"> 
 			<h2> Cadastrar Produtos</h2>
-			<form enctype="multipart/form-data"  id="frmFormulario" name="frmCategorias" action="controles/controlesProdutos/recebeDadosProdutos.php" method="post"> 
+			<form enctype="multipart/form-data"  id="frmFormulario" name="frmProdutos" action="controles/controlesProdutos/recebeDadosProdutos.php?modo=<?=$modo?>&nomeFoto=<?=$foto?>" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
                     <label>Nome Produto: </label>
-                    <input placeholder="Insira o nome" type="text" name="txtNomeProduto" value="" maxlength="50">
+                    <input placeholder="Insira o nome" type="text" name="txtNomeProduto" value="<?=$nome?>" maxlength="50">
 				</div>
 				
 				<div class="campoFormulario"> 
                     <label>Descrição:</label>
-                    <input placeholder="Insira a descrição dos componentes" type="text" name="txtDescricao" value="" maxlength="100">
+                    <input placeholder="Insira a descrição dos componentes" type="text" name="txtDescricao" value="<?=$descricao?>" maxlength="100">
 				</div>
 				
 				<div class="campoFormulario"> 
                     <label>Preço:</label>
-                    <input placeholder="Insira o valor do produto" type="text" name="txtPreco" value="" maxlength="10">
+                    <input placeholder="Insira o valor do produto" type="text" name="txtPreco" value="<?=$preco?>" maxlength="10">
 				</div>
 				
                 
                 <div class="campoFormulario"> 
                     <label>Preço Promoção:</label>
-                    <input placeholder="Insira o valor promocional" type="text" name="txtPromocao" value="" maxlength="10">
+                    <input placeholder="Insira o valor promocional" type="text" name="txtPromocao" value="<?=$valorPercentual?>" maxlength="10">
+				</div>
+				<!--imagem da foto -->
+				<div class="campoFormulario"> 
+                   <img src="<?=NOME_DIRETORIO_FILE.$foto?>">
 				</div>
                 
                 <div class="campoFormularioCheck"> 
@@ -65,7 +95,7 @@ $dadosCategoria = listarCategorias();
                    <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
 				</div>
 				<div id="buttomFormulario">
-					<input type="submit" name="btnCadastrar" value="Cadastrar">
+					<input type="submit" name="btnCadastrar" value="<?=$modo?>">
 				</div>
 			</div>
 			</form>
@@ -101,12 +131,12 @@ $dadosCategoria = listarCategorias();
 					<div class="propriedadePesquisa"> 
 						<div>
 							<a onclick="return confirm('Tem certeza que deseja excluir?');"
-                               href="controles/controlesProdutos/excluiDadosProdutos.php"> 
+                               href="controles/controlesProdutos/excluiDadosProdutos.php?id=<?=$returnProdutos['idprodutos']?>&nomeFoto=<?=$foto?>"> 
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
 							</a>
 						</div>
 						<div>
-							<a href="controles/controlesProdutos/exibirDadosProdutos.php?id= <?=$returnProdutos['idprodutos']?>">
+							<a href="controles/controlesProdutos/editaDadosProdutos.php?id= <?=$returnProdutos['idprodutos']?>">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>

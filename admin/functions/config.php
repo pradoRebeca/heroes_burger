@@ -63,6 +63,8 @@ const BD_SUCESSO_DELETAR_USUARIO = "<script> alert('Registro deletado com sucess
  
 const BD_SUCESSO_DELETAR_CONTATO = "<script> alert('Registro deletado com sucesso');window.location.href = '../../dashboardContatos.php'</script>";
 
+const BD_SUCESSO_DELETAR_PRODUTO = "<script> alert('Registro de produto deletado com sucesso');window.location.href = '../../dashboardProdutos.php'</script>";
+
 //erro deletar
 const BD_ERRO_DELETAR = "<script> alert('Não foi possivel deletar o registro. Tente novamente.'); window.history.back(); </script>";
 
