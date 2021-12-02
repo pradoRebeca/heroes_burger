@@ -2,8 +2,9 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesCategorias/exibeDadosCategoria.php");
 
-session_start();
+require_once("session.php");
 
+session();
 //declarando variaveis 
 $nome = (string) null;
 $id = (int) 0;
@@ -32,6 +33,7 @@ if(isset($_SESSION['categorias'])){
 
 <body>
 		<?php require_once("estruturaHtml/header.php");?>
+		<div id="secaoPrincipal"> 
 		<div id="secaoFormulario"> 
 			<h2> Cadastrar Catergorias</h2>
 			<form id="frmFormulario" name="frmCategorias" action="controles/controlesCategorias/recebeDadosCategorias.php?modo=<?=$modo?>&id=<?=$id?>" method="post"> 
@@ -89,6 +91,7 @@ if(isset($_SESSION['categorias'])){
 					}
 				?>
 			</div>
+		</div>
 		</div>
 		<?php require_once("estruturaHtml/footer.php");?>
 </body>

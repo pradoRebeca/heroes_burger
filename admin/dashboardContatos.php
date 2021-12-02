@@ -3,6 +3,8 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
 
+require_once("session.php");
+
 ?>
 
 
@@ -20,6 +22,7 @@ require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
 
 <body>
 	<?php require_once("estruturaHtml/header.php");?>
+	<div id="secaoPrincipal"> 
     	<div id="secaoFormulario"> 
 			<h2> Contatos </h2>
 			<div id="alterarInformacoes">
@@ -64,6 +67,7 @@ require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
                 ?>
 			</div>
 		</div>
-	<?php require_once("estruturaHtml/footer.php");?>
+	</div>
+		<?php require_once("estruturaHtml/footer.php");?>
 </body>
 </html>

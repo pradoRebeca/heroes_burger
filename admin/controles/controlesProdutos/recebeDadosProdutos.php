@@ -2,6 +2,7 @@
 require_once("../../functions/config.php");
 require_once(SRC . "dataBase/dbProdutos/inserirProdutos.php");
 require_once(SRC . "dataBase/dbProdutos/atualizarProdutos.php");
+require_once(SRC . "dataBase/dbProdutos/deletarProdutos.php");
 require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 require_once(SRC."functions/upload.php");
 
@@ -26,9 +27,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $valorPercentual = $_POST['txtPromocao'];
 		$nomeFoto = $_GET['nomeFoto'];
 	
-    if($nome == null || $descricao == null || $preco == 0){
+    if($nome == null || $descricao == null || $preco == 0 ){
         echo(ERRO_CAMPO_VAZIO);
-    } else { //tratamento para o preco e o valorPercentuial serem númericos
+    } else { 
+		//tratamento para o preco e o valorPercentuial serem númericos
 		if(!is_numeric($preco)|| ($valorPercentual != null && !is_numeric($valorPercentual))){
 			echo(ERRO_DADOS_VALIDOS);
 		} else {
@@ -54,7 +56,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if($qtdMarcacao == 0){
 			echo(ERRO_SEM_CATEGORIA);
 		} else {
-				$tblprodutos = array (
+				$tblprodutos= array (
             	"nome" => $nome,
             	"descricao" => $descricao,
 				"preco" => $preco,
@@ -63,9 +65,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 				"id" => $idProduto
         		);
 			
-			if(strtoupper($_GET['modo']) == 'CADASTRAR'){
-				$foto = uploadFile($_FILES['fleFoto']);
-				
+			if(strtoupper($_GET['modo']) == 'CADASTRAR'){ 
 				//mandando o produto e a categoria para o banco 
 				if(inserirProduto($tblprodutos)){ 
 				
@@ -83,27 +83,39 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					echo(BD_SUCESSO_INSERIR_PRODUTO);
 					}//término da função de inserir produto
 			}elseif(strtoupper($_GET['modo']) == 'ATUALIZAR'){
-				 if($_FILES['fleFoto']['name'] != null){
-            	
-           			$foto = uploadFile($_FILES['fleFoto']);
-           			unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
-					 
-       			} else {
-           			$foto = $nomeFoto;
-       			}//termino do file
 				
-				$exibirDadosCategoria = buscarCategoriaProduto($idProduto);
-				while($categoria = mysqli_fetch_assoc($exibirDadosCategoria)){
-
-				$nameCheckbox = 'chk'.$categoria['idcategorias'];
+//				if($_FILES['fleFoto']['name'] != null){
+//            	//chama a função que faz o upload de um arquivo
+//           			$foto = uploadFile($_FILES['fleFoto']);
+//           			unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
+//       			}else{
+//					$foto = $nomeFoto;
+//       			}
+					$exibirCategoria = listarCategorias();
+					while($categoria = mysqli_fetch_assoc($exibirCategoria)){
+		
+						$nameCheckbox = 'chk'.$categoria['idcategorias'];
+						
+						if(isset($_POST[$nameCheckbox])){
+						
+							echo($categoria['idcategorias']);
+							echo($tblprodutos['id'] );
 					
-				session_start();
-
-    			$_SESSION['checked'] = "checked";
-				} // término do while
-				
-				 editarProduto($tblprodutos);
-				unset($_SESSION['checked']);
+							if(!buscarCategoriaProduto($tblprodutos['id'], $categoria['idcategorias'])){
+								editarProduto($tblprodutos);
+								produtoCategoria2($categoria['idcategorias'], $tblprodutos['id']);
+							} 
+							
+						} else {
+							$funcaoDeletar = buscarCategoriaProduto($tblprodutos['id'], $categoria['idcategorias']);
+							if($funcaoDeletar){
+								atualizarCategoriaProduto($categoria['idcategorias'], $tblprodutos['id']);
+							}
+						}
+						
+						} // término do while
+					die;
+				echo(BD_SUCESSO_INSERIR_PRODUTO);
 			}//TERMINO DA VALIDAÇÃO ATUALIZAR
  
 		}//TÉRMINO DA VALIDAÇÃO CATEGORIA

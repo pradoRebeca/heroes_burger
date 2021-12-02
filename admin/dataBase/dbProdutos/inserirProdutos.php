@@ -59,5 +59,22 @@ function produtoCategoria($idcategoria){
     }
 }
 
+function produtoCategoria2($idcategoria, $idproduto){
+	  $sql = "insert into tblCategoriasProdutos(idcategorias, 
+                                    idprodutos
+                                    ) 
+                                    values(
+                                    '".$idcategoria."',
+                                    '".$idproduto."'
+                                    )";
+	
+	$conexao = conexaoMysql();
+    
+    if(mysqli_query($conexao, $sql)){
+        return true;
+    } else {
+        return false;
+    }
+}
 
 ?>

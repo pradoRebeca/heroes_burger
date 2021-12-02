@@ -2,8 +2,10 @@
 require_once("functions/config.php");
 require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 require_once(SRC.'controles/controlesProdutos/exibeDadosProdutos.php');
+
 $dadosCategoria = listarCategorias();
 
+require_once("session.php");
 
 session_start();
 
@@ -12,10 +14,11 @@ $nome = (string) null;
 $descricao = (string) null;
 $preco = (double) null;
 $valorPercentual = (int) null;
-$foto = (string) "sem-foto.jpg";
+$foto = (string) null;
 $marcado = (string) null;
 $id = (int) 0;
 $modo = (string) "Cadastrar";
+$status = (string) "false";
 
 if(isset($_SESSION['produtos'])){
 	$nome = $_SESSION['produtos']['nome'];
@@ -24,11 +27,12 @@ if(isset($_SESSION['produtos'])){
 	$preco = $_SESSION['produtos']['preco'];
 	$foto = $_SESSION['produtos']['imagens'];
 	$valorPercentual = $_SESSION['produtos']['precoPromocao'];
-	$marcado =;
-
+	
 	$modo = "Atualizar";
 	unset($_SESSION['produtos']);
 }
+
+
 ?>
 
 
@@ -46,9 +50,10 @@ if(isset($_SESSION['produtos'])){
 
 <body>
 	<?php require_once("estruturaHtml/header.php");?>
+	<div id="secaoPrincipal"> 
     	<div id="secaoFormulario"> 
 			<h2> Cadastrar Produtos</h2>
-			<form enctype="multipart/form-data"  id="frmFormulario" name="frmProdutos" action="controles/controlesProdutos/recebeDadosProdutos.php?modo=<?=$modo?>&nomeFoto=<?=$foto?>" method="post"> 
+			<form enctype="multipart/form-data"  id="frmFormulario" name="frmProdutos" action="controles/controlesProdutos/recebeDadosProdutos.php?modo=<?=$modo?>&nomeFoto=<?=$foto?>&id=<?=$id?>" method="post"> 
 			<div class="organizarSecaoFrm">
 				<div class="campoFormulario"> 
                     <label>Nome Produto: </label>
@@ -75,9 +80,12 @@ if(isset($_SESSION['produtos'])){
                    <img src="<?=NOME_DIRETORIO_FILE.$foto?>">
 				</div>
                 
+				 <div class="campoFormulario"> 
+                   <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
+				</div>
                 <div class="campoFormularioCheck"> 
                     <p>Categoria:</p>
-      					$a
+      				
                         <?php
 
 						while($returnCategoria=mysqli_fetch_assoc($dadosCategoria)){
@@ -91,9 +99,8 @@ if(isset($_SESSION['produtos'])){
                         ?>
                   
 				</div>
-                <div class="campoFormulario"> 
-                   <input type="file" name="fleFoto" accept="image/jpeg, image/jpg, image/png">
-				</div>
+				
+                
 				<div id="buttomFormulario">
 					<input type="submit" name="btnCadastrar" value="<?=$modo?>">
 				</div>
@@ -136,7 +143,7 @@ if(isset($_SESSION['produtos'])){
 							</a>
 						</div>
 						<div>
-							<a href="controles/controlesProdutos/editaDadosProdutos.php?id= <?=$returnProdutos['idprodutos']?>">
+							<a href="controles/controlesProdutos/editaDadosProdutos.php?id=<?=$returnProdutos['idprodutos']?>&$foto=<?=$foto?>">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">
 							</a>
 						</div>
@@ -148,8 +155,8 @@ if(isset($_SESSION['produtos'])){
                 ?>
 			</div>
 		</div>
-    
-    
+	</div>
 	<?php require_once("estruturaHtml/footer.php");?>
 </body>
 </html>
+

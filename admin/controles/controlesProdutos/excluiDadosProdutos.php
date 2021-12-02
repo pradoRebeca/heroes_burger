@@ -6,11 +6,12 @@ $id = $_GET['id'];
 
 $nomeFoto = $_GET['nomeFoto'];
 
+echo($nomeFoto);
 if(deletarProduto($id)){
-	unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
-	die;
+	if($nomeFoto != null){
+		unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
+	}
 	echo(BD_SUCESSO_DELETAR_PRODUTO);
-	
 } else {
 	echo(BD_ERRO_DELETAR);
 }

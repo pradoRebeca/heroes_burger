@@ -41,6 +41,8 @@ const ERRO_DADOS_VALIDOS = "<script> alert('Preencha os campos com valores valid
 
 const ERRO_SEM_CATEGORIA = "<script> alert('O produto deverá percenter a no minino uma categoria'); window.history.back(); </script>";
 
+const ERRO_USUARIO = "<script> alert('Usuario ou Senha incorretos');window.location.href = 'index.php'</script>";
+
 //erros inserir 
 const BD_ERRO_INSERIR = "<script> alert('Não foi possivel inserir registro'); window.history.back(); </script>";
 	

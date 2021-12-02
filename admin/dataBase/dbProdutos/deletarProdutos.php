@@ -26,4 +26,18 @@ function deletarCategoriaProduto($id){
 	}
 }
 
+
+
+function atualizarCategoriaProduto($idcategoria, $idproduto){
+	$sql = "delete from tblcategoriasprodutos where idcategorias=".$idcategoria." and idprodutos =".$idproduto;
+	
+	$conexao = conexaoMysql();
+	
+	if(mysqli_query($conexao, $sql)){
+		return true;
+	} else {
+		return false;
+	}
+}
+
 ?>

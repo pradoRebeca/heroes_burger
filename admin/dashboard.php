@@ -1,5 +1,6 @@
 <?php
-
+require_once("session.php");
+session()
 ?>
 
 <!DOCTYPE html>

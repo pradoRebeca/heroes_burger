@@ -1,3 +1,7 @@
+<?php
+//require_once("session.php");
+//session()
+?>
 <header>
 	<div id="headerTitulo"> 
 		<h1> CMS <span id="nomeEmpresa">Heroes Burger</span></h1>
@@ -38,13 +42,13 @@
 					</div>
 				</div>
 				<div id="admUsuario"> 
-					<p> Rebeca Prado </p>
+					<p><?=$_SESSION['nomeUsuario']?></p>
 					<div id="admUsuarioImg"> 
 						<img src="../img/admUsuarios.png" title="Imagem do Usuario">
 					</div>
 				</div>
 				<div id="admSairUsuario">
-					<a href="login.html"> 
+					<a href="logout.php"> 
 						<img src="../img/iconeSair.png" alt="Sair" title="Sair">
 						<p> Sair</p> 
 					</a>

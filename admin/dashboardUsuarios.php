@@ -2,8 +2,7 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesUsuarios/exibeDadosUsuarios.php");
 
-session_start();
-
+	
 $id = (int) 0;
 $nome = (string) null;
 $email = (string) null;
@@ -19,7 +18,9 @@ if(isset($_SESSION['usuario'])){
 	
 	//eliminando variaveis da memória
 	 unset($_SESSION['usuario']);
-}
+} 
+	
+
 
 ?>
 
@@ -37,6 +38,7 @@ if(isset($_SESSION['usuario'])){
 
 <body>
 	<?php require_once("estruturaHtml/header.php");?>
+	<div id="secaoPrincipal"> 
 	<div id="secaoFormulario"> 
 			<h2> Cadastrar Usuários</h2>
 			<form id="frmFormulario" name="frmCategorias" action="controles/controlesUsuarios/recebeDadosUsuarios.php?modo=<?=$modo?>&id=<?=$id?>" method="post"> 
@@ -110,7 +112,8 @@ if(isset($_SESSION['usuario'])){
 				
 			</div>
 		</div>
-	<?php require_once("estruturaHtml/footer.php");?>
+	</div>
+		<?php require_once("estruturaHtml/footer.php");?>
 </body>
 </html>
 

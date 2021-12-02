@@ -8,7 +8,7 @@ Autor: Rebeca Nascimento Prado
 require_once(SRC."dataBase/conexaoMysql.php");
 
 function editarProduto($array){
-    $sql = " update tblprodutos set
+    $sql = "update tblprodutos set
                 			nome = '".$array['nome']."',
                             descricao = '".$array['descricao']."',
                             preco = '".$array['preco']."',
@@ -27,13 +27,17 @@ function editarProduto($array){
     }
 }
 
-function buscarCategoriaProduto($idProduto){
-	 $sql = " select idcategorias from tblcategoriasprodutos  where idprodutos = ".$idProduto;
+function buscarCategoriaProduto($idProduto, $idCategorias){
+	 $sql = " select idcategorias from tblcategoriasprodutos  where idprodutos = '".$idProduto."'and idcategorias ='".$idCategorias."'limit 1";
     
     $conexao = conexaoMysql();
     
-    if($select = mysqli_query($conexao, $sql)){
-        return $select; 
+    if(mysqli_query($conexao, $sql)){
+		if(mysqli_affected_rows($conexao) == 1){
+			return true; 
+		} else {
+			 return false; 
+		}
     } else{
         return false; 
     }
