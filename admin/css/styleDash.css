@@ -381,8 +381,9 @@ h2{
 
 /*modal*/
 #containerModal{
+	top: 0px;
     width: 100vw;
-    height: 100h;
+    height: 100vh;
     background-color: rgba(0,0,0,0.5);
     position: fixed;
     z-index: 999;

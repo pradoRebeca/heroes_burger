@@ -81,14 +81,12 @@ if(isset($_SESSION['produtos'])){
 </head>
 
 <body>
-<!--
 	 <div id="containerModal">
             <span id="fecharModal"> X </span>
             <div id="modal">
             
             </div>
         </div>
--->
 	<?php require_once("estruturaHtml/header.php");?>
 	<div id="secaoPrincipal"> 
     	<div id="secaoFormulario"> 

@@ -32,6 +32,20 @@ function buscaProduto($id){
     
 }
 
+function exibirProdutoModal($id){
+	  $sql = "select tblprodutos.*, tblcategorias.nome from tblprodutos 
+	  inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
+	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias 
+	  where tblprodutos.idprodutos = ".$id;
+	
+      $conexao = conexaoMysql();
+   
+    if($select = mysqli_query($conexao, $sql)){
+        return $select;
+    } else {
+        return false;
+    }
+}
 
 
 

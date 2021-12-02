@@ -3,7 +3,7 @@
     require_once("controles/controlesProdutos/exibeDadosProdutos.php");
     $id = $_GET["id"];
     
-    $dadosCliente = listarProdutos($id);
+    $dadosProduto = mysqli_fetch_assoc(produtoModal($id));
     
 ?>
 
@@ -21,7 +21,7 @@
     <table>
         <tr>
             <td>Nome: </td>
-            <td><?=$dadosCliente["nome"]?></td>
+            <td><?=najnsaj?></td>
         </tr>
         <tr>
             <td>Rg:</td>

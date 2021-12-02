@@ -13,6 +13,10 @@ function listarProdutos(){
     return $dados;
 }
 
-
+function produtoModal($id){
+	 $dados = exibirProdutoModal($id);
+        
+    return $dados;
+}
 
 ?>
