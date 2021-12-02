@@ -2,6 +2,9 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesUsuarios/exibeDadosUsuarios.php");
 
+require_once("session.php");
+
+session();
 	
 $id = (int) 0;
 $nome = (string) null;

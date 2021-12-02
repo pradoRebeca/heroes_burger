@@ -48,7 +48,7 @@
 					</div>
 				</div>
 				<div id="admSairUsuario">
-					<a href="logout.php"> 
+					<a href="index.php"> 
 						<img src="../img/iconeSair.png" alt="Sair" title="Sair">
 						<p> Sair</p> 
 					</a>

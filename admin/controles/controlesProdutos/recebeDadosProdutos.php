@@ -25,9 +25,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $descricao = $_POST['txtDescricao'];
         $preco  = $_POST['txtPreco'];
         $valorPercentual = $_POST['txtPromocao'];
-		$nomeFoto = $_GET['nomeFoto'];
+		
+	  $nomeFoto = $_GET['nomeFoto'];
+   
+   if(strtoupper($_GET["modo"]) == "ATUALIZAR") {
+       if($_FILES['fleFoto']['name'] != null){
+            //chama a função que faz o upload de um arquivo
+           $foto = uploadFile($_FILES['fleFoto']);
+           unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
+       }else{
+           $foto = $nomeFoto;
+       }
+   }else{ //caso a variavel modo seja SALVAR, então será obrigatório o upload da foto
+         $foto = uploadFile($_FILES['fleFoto']);
+   }
 	
-    if($nome == null || $descricao == null || $preco == 0 ){
+    if($nome == null || $descricao == null || $preco == 0 || $foto == null){
         echo(ERRO_CAMPO_VAZIO);
     } else { 
 		//tratamento para o preco e o valorPercentuial serem númericos
@@ -84,23 +97,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 					}//término da função de inserir produto
 			}elseif(strtoupper($_GET['modo']) == 'ATUALIZAR'){
 				
-//				if($_FILES['fleFoto']['name'] != null){
-//            	//chama a função que faz o upload de um arquivo
-//           			$foto = uploadFile($_FILES['fleFoto']);
-//           			unlink(SRC.NOME_DIRETORIO_FILE.$nomeFoto);
-//       			}else{
-//					$foto = $nomeFoto;
-//       			}
 					$exibirCategoria = listarCategorias();
 					while($categoria = mysqli_fetch_assoc($exibirCategoria)){
 		
 						$nameCheckbox = 'chk'.$categoria['idcategorias'];
 						
 						if(isset($_POST[$nameCheckbox])){
-						
-							echo($categoria['idcategorias']);
-							echo($tblprodutos['id'] );
-					
 							if(!buscarCategoriaProduto($tblprodutos['id'], $categoria['idcategorias'])){
 								editarProduto($tblprodutos);
 								produtoCategoria2($categoria['idcategorias'], $tblprodutos['id']);
@@ -114,7 +116,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						}
 						
 						} // término do while
-					die;
+					
 				echo(BD_SUCESSO_INSERIR_PRODUTO);
 			}//TERMINO DA VALIDAÇÃO ATUALIZAR
  

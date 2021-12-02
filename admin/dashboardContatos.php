@@ -3,8 +3,10 @@
 require_once("functions/config.php");
 require_once(SRC ."controles/controlesContatos/exibeDadosContatos.php");
 
+
 require_once("session.php");
 
+session();
 ?>
 
 
