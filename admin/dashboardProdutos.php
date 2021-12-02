@@ -3,6 +3,7 @@ require_once("functions/config.php");
 require_once(SRC.'controles/controlesCategorias/exibeDadosCategoria.php');
 require_once(SRC.'controles/controlesProdutos/exibeDadosProdutos.php');
 
+
 $dadosCategoria = listarCategorias();
 
 require_once("session.php");
@@ -27,7 +28,7 @@ if(isset($_SESSION['produtos'])){
 	$preco = $_SESSION['produtos']['preco'];
 	$foto = $_SESSION['produtos']['imagens'];
 	$valorPercentual = $_SESSION['produtos']['precoPromocao'];
-	
+    
 	$modo = "Atualizar";
 	unset($_SESSION['produtos']);
 }
@@ -110,7 +111,7 @@ if(isset($_SESSION['produtos'])){
 				
                 
                 <div class="campoFormulario"> 
-                    <label>Preço Promoção:</label>
+                    <label>Porcentagem de Desconto</label>
                     <input placeholder="Insira o valor promocional" type="text" name="txtPromocao" value="<?=$valorPercentual?>" maxlength="10">
 				</div>
 				<!--imagem da foto -->
@@ -127,10 +128,12 @@ if(isset($_SESSION['produtos'])){
                         <?php
 
 						while($returnCategoria=mysqli_fetch_assoc($dadosCategoria)){
-            
+                        
+                        $status = categoriaChecked($id, $returnCategoria['idcategorias']);
+                            
                         ?>
 						
-                        <input value="" type="checkbox" name="chk<?=$returnCategoria['idcategorias']?>">  
+                        <input value="" type="checkbox" name="chk<?=$returnCategoria['idcategorias']?>" <?=$status=="true"?"checked":""?>>  
 						<label><?=$returnCategoria['nome']?> </label>
                         <?php
                         }
@@ -180,10 +183,12 @@ if(isset($_SESSION['produtos'])){
 								<img src="../img/iconExcluir.png" alt="" title="Excluir">
 							</a>
 						</div>
+<!--
 						<div class="pesquisar">
 							<img src="../img/iconPesquisar.png" alt="" title="Excluir" data-id="<?=$returnProdutos['idprodutos']?>">
 							
 						</div>
+-->
 						<div>
 							<a href="controles/controlesProdutos/editaDadosProdutos.php?id=<?=$returnProdutos['idprodutos']?>&$foto=<?=$foto?>">
 								<img src="../img/iconAlterar.png" alt="" title="Alterar">

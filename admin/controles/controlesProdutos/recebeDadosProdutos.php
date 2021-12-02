@@ -117,7 +117,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 						
 						} // término do while
 					
-				echo(BD_SUCESSO_INSERIR_PRODUTO);
+				echo(BD_SUCESSO_PRODUTO);
 			}//TERMINO DA VALIDAÇÃO ATUALIZAR
  
 		}//TÉRMINO DA VALIDAÇÃO CATEGORIA

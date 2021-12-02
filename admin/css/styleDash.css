@@ -287,6 +287,7 @@ h2{
 
 /*secao de alteracao de informações */
 #alterarInformacoes{
+    margin-top: 50px;
 	width: inherit; 
 	min-height: 150px;
 	height: auto;

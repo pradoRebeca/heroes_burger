@@ -14,4 +14,6 @@ function listarCategorias(){
 	return $exibirDados;
 };
 
+
+
 ?>
