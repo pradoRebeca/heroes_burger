@@ -17,7 +17,7 @@ function editarProduto($array){
                 
             where idprodutos = ".$array['id'];
     
-    $conexao = conexaoMysql();
+    $conexao = conexaoMysql;
     
    
     if(mysqli_query($conexao, $sql)){
