@@ -32,11 +32,10 @@ function buscaProduto($id){
     
 }
 
-function exibirProdutoModal($id){
-	  $sql = "select tblprodutos.*, tblcategorias.nome from tblprodutos 
+function listarProdutoApi(){
+	  $sql = "select tblprodutos.*, tblcategorias.nome as categoria,  round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
 	  inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
-	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias 
-	  where tblprodutos.idprodutos = ".$id;
+	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias";
 	
       $conexao = conexaoMysql();
    
@@ -47,7 +46,33 @@ function exibirProdutoModal($id){
     }
 }
 
+function buscarNomeProdutoApi($nome){
+    $sql = "select tblprodutos.*, tblcategorias.nome as categoria, round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
+	  inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
+	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias where tblcategorias.nome like '%".$nome."%'";
+	
+      $conexao = conexaoMysql();
+   
+    if($select = mysqli_query($conexao, $sql)){
+        return $select;
+    } else {
+        return false;
+    }  
+}
 
-
+//função para buscar pelo nome da categoria
+function buscarNomeCategoriaApi($nome){
+     $sql = "select tblprodutos.*, tblcategorias.nome as categoria,  round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
+	  inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
+	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias where tblcategorias.nome '%".$nome."%'";
+	
+      $conexao = conexaoMysql();
+   
+    if($select = mysqli_query($conexao, $sql)){
+        return $select;
+    } else {
+        return false;
+    }  
+}
 
 ?>
