@@ -79,7 +79,7 @@ function buscarNomeApi($nome){
 }
 
 function buscarProdutoPorCategroiaApi($idcategoria){
-    $dados = listarProdutoPorCategoriaApi($idcategoria);
+    $dados = listarProdutoPorCategoria($idcategoria);
         
     return $dados;
 }
