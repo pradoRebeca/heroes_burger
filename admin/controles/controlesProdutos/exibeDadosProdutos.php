@@ -78,6 +78,10 @@ function buscarNomeApi($nome){
     return $dados;
 }
 
-
+function buscarProdutoPorCategroiaApi($idcategoria){
+    $dados = listarProdutoPorCategoriaApi($idcategoria);
+        
+    return $dados;
+}
 
 ?>

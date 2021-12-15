@@ -2,8 +2,6 @@
 //import do arquivo de configurações do sistema
 require_once("../functions/config.php");
 
-require_once("produtosApi/index.php");
-
 
 $url = (string) null;
 
@@ -19,7 +17,7 @@ switch($url[0]){
         break;
         
     case 'categorias': 
-        require_once("categoriasAPI/index.php");
+        require_once("categoriaAPI/index.php");
         break;
 }
 ?>

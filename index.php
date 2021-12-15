@@ -14,7 +14,7 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
     <link type="text/css"
           rel="stylesheet"
           href="style.css">
-	<script src="./file.js" defer> </script>
+	<script src="admin/js/api.js" defer> </script>
 </head>
 
 <body>
@@ -77,35 +77,7 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
             </form>
 		</div>
 		<div id="secaoCardapio">
-			<div class="itemCardapio">
-				<div class="imgCardapio">
-					<img src="img/hbChefe.png" alt="">
-				</div>
-				<p class="nomeHamburguer"> BURGUER THE CITY </p>
-				<p class="descricaoHamburguer"> CARNE, QUEIJO, BACON, PICLES, ALFACE, MAIONESE DA CASA</p>
-				<div class="saibaHamburguer"> SAIBA MAIS </div>
-				<div class="precoHamburguer"> R$ 15,90</div>
-			</div>
-			
-			<div class="itemCardapio2">
-				<div class="imgCardapio">
-					<img src="img/hb2.png" alt="">
-				</div>
-				<p class="nomeHamburguer"> BURGUER THE CITY </p>
-				<p class="descricaoHamburguer"> CARNE, QUEIJO, BACON, PICLES, ALFACE, MAIONESE DA CASA</p>
-				<div class="saibaHamburguer"> SAIBA MAIS </div>
-				<div class="precoHamburguer"> R$ 15,90</div>
-			</div>
-			
-			<div class="itemCardapio3">
-				<div class="imgCardapio">
-					<img src="img/hb5.png" alt="">
-				</div>
-				<p class="nomeHamburguer"> BURGUER THE CITY </p>
-				<p class="descricaoHamburguer"> CARNE, QUEIJO, BACON, PICLES, ALFACE, MAIONESE DA CASA</p>
-				<div class="saibaHamburguer"> SAIBA MAIS </div>
-				<div class="precoHamburguer"> R$ 15,90</div>
-			</div>
+
 		</div>
 	</div>
 	<div id="secaoEmpresa">

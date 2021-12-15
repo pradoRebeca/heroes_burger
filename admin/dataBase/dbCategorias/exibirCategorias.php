@@ -31,4 +31,19 @@ function buscar($id){
     
 }
 
+function buscarNomeCategoria($nome){
+    echo("ta aqui");
+    die;
+    $sql = "select * from tblcategorias where tblcategorias.nome like '%".$nome."%'";
+    
+	$conexao = conexaoMysql();
+	$select = mysqli_query($conexao, $sql);
+
+	if($select){
+		return $select;
+	} else {
+		return false;
+	}
+}
+
 ?>
