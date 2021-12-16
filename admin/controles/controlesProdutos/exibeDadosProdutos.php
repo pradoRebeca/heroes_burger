@@ -32,8 +32,8 @@ function criarArray($objeto){
             "preco" => $rsDados['preco'],
             "valorPercentual" => $rsDados['precoPromocao'],
             "valorDesconto" => $rsDados['valorDesconto'],
-            "imagens" => $rsDados['imagens'],
-            "categoria" => $rsDados['categoria']
+            "imagens" => $rsDados['imagens']
+            
         );
         
         $cont+=1;

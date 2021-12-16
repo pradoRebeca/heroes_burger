@@ -33,9 +33,7 @@ function buscaProduto($id){
 }
 
 function listarProdutoApi(){
-	  $sql = "select tblprodutos.*, tblcategorias.nome as categoria,  round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
-      inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
-	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias";
+	  $sql = "select tblprodutos.*,  round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos";
 	
       $conexao = conexaoMysql();
    
@@ -47,9 +45,8 @@ function listarProdutoApi(){
 }
 
 function buscarNomeProdutoApi($nome){
-    $sql = "select tblprodutos.*, tblcategorias.nome as categoria, round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
-	  inner join tblcategoriasprodutos on tblcategoriasprodutos.idprodutos = tblprodutos.idprodutos
-	  inner join tblcategorias on tblcategoriasprodutos.idcategorias = tblcategorias.idcategorias where tblprodutos.nome like '%".$nome."%'";
+    $sql = "select tblprodutos.*, round((tblprodutos.preco*(tblprodutos.precoPromocao/100)), 2) as valorDesconto from tblprodutos 
+	where tblprodutos.nome like '%".$nome."%'";
 	
       $conexao = conexaoMysql();
    

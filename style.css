@@ -147,12 +147,13 @@ li a{
 	background-color: rgba(0, 0, 0, 0.9);
 	margin-top: -42px;
 	justify-content: space-around;
+	flex-direction: column;
 	display: flex;
 	align-items: center;
 	padding: 15px;
 }
 
-#secaoIconeMenu ul{
+.secaoIconeMenuUl{
 	list-style: none;
 	min-width: inherit;
 	height: inherit;
@@ -160,7 +161,7 @@ li a{
 	text-align: center;
 }
 
-#secaoIconeMenu li{
+.secaoIconeMenuli{
 	min-width: inherit;
 	height: 35px;
 	display: flex;

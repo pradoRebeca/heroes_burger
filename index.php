@@ -52,29 +52,16 @@ require_once(SRC . 'controles/controlesCategorias/exibeDadosCategoria.php');
 	</div>
 	<div id="secaoHamburguer">
 		<div id="pesquisaMenu">
-            <form id="frmPesquisar" name="frmPesquisar" action="" method="">
-                <div id="iconeMenu">
+				<div id="iconeMenu">
 					<img class="iconeMenu" src="img/iconeMenu.png">
-
-					<div id="secaoIconeMenu">
-						<ul>
-                            <?php
-                            $listar = listarCategorias();
-                            while($returnCategoria=mysqli_fetch_assoc($listar)){               
-                            ?>
-								<li> <?=strtoupper($returnCategoria['nome'])?></li>
-                            <?php
-                            }
-                            ?>
-						</ul>
-					</div>
+					<div id="secaoIconeMenu"></div>
                 </div>
 			
                 <div id="barraPesquisa">
 				<input type="text" placeholder="Pesquisar" id="pesquisa">
 				<input type="image" id="iconePesquisa" src="img/pesquisa.png">
-			     </div>
-            </form>
+			    </div>
+           
 		</div>
 		<div id="secaoCardapio">
 

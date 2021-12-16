@@ -5,7 +5,7 @@ $app = new \Slim\App();
 
 $app->get('/categorias', function($request, $response, $args){
     require_once("../controles/controlesCategorias/exibeDadosCategoria.php");
-    echo("ta aqui");
+ 
     if(isset($request->getQueryParams()['nome'])){
         $nome = (string) null;
      

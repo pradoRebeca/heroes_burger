@@ -7,22 +7,18 @@ Autor: Rebeca Nascimento Prado
 
 /* conexão de casa*/
 
-//const BD_SERVER = "localhost";
-//const BD_USER = "root";
-//const BD_PASSWORD = "abc127";
-//const BD_DATABASE = "dbheroesburger";
+const BD_SERVER = "localhost";
+const BD_USER = "root";
+const BD_PASSWORD = "abc127";
+const BD_DATABASE = "dbheroesburger";
 //caminho url casa
 //define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/senai/marcel/heroes_burger/admin/');
 
-
-
-
-
 //conexão senai
-const BD_SERVER = "localhost";
-const BD_USER = "root";
-const BD_PASSWORD = "bcd127";
-const BD_DATABASE = "dbheroesburger";
+//const BD_SERVER = "localhost";
+//const BD_USER = "root";
+//const BD_PASSWORD = "bcd127";
+//const BD_DATABASE = "dbheroesburger";
 //url senai
 define( 'SRC' , $_SERVER['DOCUMENT_ROOT'] . '/ds2t20212/heroes_burger/admin/');
 

@@ -46,48 +46,18 @@ if(isset($_SESSION['produtos'])){
 	<title> Produtos  </title>
 	<link type="text/css"
       rel="stylesheet"
-      href="css/styleDash.css">
-	
- <script src="js/jquery.js"> </script>
-        <script> 
-            $(document).ready(function(){
-                /*abre modal*/
-                $("#containerModal").css("display", "none")
-               $(".pesquisar").click(function(){
-                   $("#containerModal").fadeIn(1000);
-                   /*recebe o id do cliente que foi adicionado pelo data atributo no html*/
-                   let idProduto = $(this).data("id");
-                   
-                   //Realiza uma requisição para consumir dados de uma outra pagina
-                   $.ajax({
-                       /*tipo de requisição (GET, POST, PUT, etc*/
-                       type: "GET",
-                       
-                       /*URL da pagina que será consumida ou utilizada*/
-                       url: "visualizarDados.php",
-                       data:{id:idProduto},
-                       /*se a requisição der certo, iremos receber o conteúdo na variavel dados */
-                       success: function(dados){
-                           /*exibe dento da div modal*/
-                           $("#modal").html(dados);
-                       }
-                   });
-               })
-                /*fecha modal*/
-                $("#fecharModal").click(function(){
-                    $("#containerModal").fadeOut();
-                })
-            });
-        </script>
+      href="css/styleDash.css">       
 </head>
 
 <body>
+<!--
 	 <div id="containerModal">
             <span id="fecharModal"> X </span>
             <div id="modal">
             
             </div>
         </div>
+-->
 	<?php require_once("estruturaHtml/header.php");?>
 	<div id="secaoPrincipal"> 
     	<div id="secaoFormulario"> 
