@@ -10,7 +10,7 @@ exibidos na página inicial do site.
 
 ## Requisitos para rodar o projeto localmente
 
-* xamp
+* xampp
 * Banco de dados MySQL
 
 ## Como iniciar o projeto? 
